@@ -17,17 +17,24 @@ class Controller extends CI_Controller {
     }
 
 	public function login() {
-        $username = $this->input->post('name');
-        $password = $this->input->post('pass');
+		$username = $this->input->post('name');   // Get the 'name' input from the POST data
+		$password = $this->input->post('pass');   // Get the 'pass' input from the POST data
+	
+		if ($username == "Shashikant" && $password == "Rev@2217") {
+			// If the username and password match, set a session variable and load a view
+			$this->session->set_userdata('logged_in', true);
+			$data['result'] = $this->Model->readData();  // Assuming there's a Model class with a readData method
+			$this->load->view('index', $data);
+		} else {
+			
+			
+			echo "<script>alert('Invalid Username or Password! Please try again.')</script>";
+			redirect('controller/logout');
+			
+		}
 
-        if ($username == "Shrikant" && $password == "Shri@1176") {
-            $this->session->set_userdata('logged_in', true);
-            $data['result'] = $this->Model->readData();
-            $this->load->view('index', $data);
-        } else {
-            echo "<script>alert('Invalid Username or Password! Please try again.')</script>";
-        }
-    }
+	}
+	
 
 	public function index(){
 		$data['result'] = $this->Model->readData();
