@@ -1,6 +1,15 @@
 <?php include('header.php'); ?>
  <?php include('connect.php'); ?>
 
+ <script>
+    function toggleEditable(inputId) {
+        var inputElement = document.getElementById(inputId);
+        inputElement.contentEditable = inputElement.contentEditable === 'true' ? 'false' : 'true';
+
+       
+    }
+</script>
+
 
 
  <h1>Camp Tracker</h1>
@@ -78,12 +87,12 @@
                   <div style="display:flex; justify-content:space-evenly;">
                       <div>
                         <span class="px-2" id="kms">
-                          <?php echo $row->inceptionkm; ?>
+                         <input value=" <?php echo $row->inceptionkm; ?>">
                         </span>
                       </div>
                     <div>
                         <span style="">
-                          <?php echo $row->inceptioncount; ?>
+                         <input value=" <?php echo $row->inceptioncount; ?>">
                        </span>
                     </div>
                  <div>
@@ -93,12 +102,12 @@
                   <div style="display:flex; justify-content:space-evenly;">
                       <div>
                         <span class="px-2">
-                          <?php echo $row->monthkm; ?>
+                         <input value=" <?php echo $row->monthkm; ?>">
                         </span>
                       </div>
                       <div>
                       <span>
-                        <?php echo $row->monthcount; ?>
+                       <input value=" <?php echo $row->monthcount; ?>">
                       </span>
                       </div>
                   </div>
@@ -108,12 +117,12 @@
                   <div style="display:flex; justify-content:space-evenly;">
                       <div>
                         <span class="px-2">
-                          <?php echo $row->currentkm; ?>
+                          <input value="<?php echo $row->currentkm; ?>">
                         </span>
                       </div>
                       <div>
                         <span>
-                          <?php echo $row->currentcount; ?>
+                         <input value=" <?php echo $row->currentcount; ?>">
                         </span>
                     </div>
                   </div>
@@ -122,7 +131,7 @@
               
                   <div style="display:flex; justify-content:space-evenly;">
                 <a href="<?php echo base_url('controller/get/' . $row->id); ?>">
-                  <button style="border-radius:50%;">
+                  <button style="border-radius:50%;" onclick="toggleEditable('<?php echo $row->id; ?>')">
                     <img src="https://cdn-icons-png.flaticon.com/128/13707/13707429.png" alt="update" width="30" height="30">
                   </button>
                 </a>

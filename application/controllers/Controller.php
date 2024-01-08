@@ -12,6 +12,8 @@ class Controller extends CI_Controller {
 		
 	}
 
+	
+
 	private function is_logged_in() {
         return $this->session->userdata('logged_in') === true;
     }

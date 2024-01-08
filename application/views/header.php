@@ -45,6 +45,17 @@ label{
   border: 1px solid black;
 }
 
+input{
+  width:45%;
+  text-align:center;
+  margin-left:39px;
+  border:none;
+  background-color:#c3e6cb;;
+}
+
+button{
+  margin-left:15px;
+}
 
 
 

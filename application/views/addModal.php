@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
 
 let currentDate = new Date();
 
@@ -71,4 +71,4 @@ console.log("Current Date:", formattedDate);
 document.getElementById('date').value =  formattedDate ;
 
 
-</script>
+</script> -->
