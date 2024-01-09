@@ -79,10 +79,11 @@
         </thead>
         <tbody >
         <?php foreach ($result as $row): ?>
+          <form <?php base_url();?> >
             <tr>
-                <!-- <td scope="row"><?php echo $row->id; ?></td> -->
-                <td  style="text-align:center" scope="row"><?php echo $row->date; ?></td>
-                <td  style="text-align:center"><?php echo $row->mmu; ?></td>
+                <td scope="row"><?php echo $row->id; ?></td>
+                <td  style="text-align:center" scope="row"><input value="<?php echo $row->date; ?>"></td>
+                <td  style="text-align:center"><input value="<?php echo $row->mmu; ?>"></td>
                 <td>
                   <div style="display:flex; justify-content:space-evenly;">
                       <div>
@@ -141,6 +142,7 @@
                     <img src="https://cdn-icons-png.flaticon.com/128/6711/6711573.png" alt="update" width="30" height="30">
                   </button>
               </a>
+            </form>
         </div>
                 </td
             </tr>
